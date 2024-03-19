@@ -1,0 +1,15 @@
+/* Custom CSS styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.container {
+    text-align: center;
+}
+
+.btn {
+    margin-right: 5px;
+}

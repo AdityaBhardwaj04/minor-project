@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block title %}Welcome{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2>Welcome, {{ username }}!</h2>
+    <form action="/upload" method="POST" enctype="multipart/form-data">
+        <div class="form-group">
+            <input type="hidden" name="username" value="{{ username }}">
+            <input type="file" name="file" class="form-control-file" required>
+        </div>
+        <button type="submit" class="btn btn-success">Upload File</button>
+    </form>
+
+    <h3 class="mt-5">Uploaded Files:</h3>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Sl. No.</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Download</th>
+                    <th scope="col">Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for filename in filenames %}
+                <tr>
+                    <th scope="row">{{ loop.index }}</th>
+                    <td>{{ filename }}</td>
+                    <td><a href="{{ url_for('download_file', username=username, filename=filename) }}" target="_blank" class="btn btn-primary">Download</a></td>
+                    <td><a href="{{ url_for('delete_file', username=username, filename=filename) }}" class="btn btn-danger">Delete</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

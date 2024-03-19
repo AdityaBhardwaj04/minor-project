@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block title %}Welcome to Face Recognition Authentication{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>Welcome to Face Recognition Authentication</h1>
+    <p>Please proceed to the <a href="{{ url_for('signup_user') }}" class="btn btn-primary">sign-up page</a> if you are a new user.</p>
+    <p>Already have an account? <a href="{{ url_for('login_user') }}" class="btn btn-success">Login here</a>.</p>
+</div>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}Welcome to Face Recognition Authentication{% endblock %}
+
+{% block content %}
+<h1>Download Successful</h1>
+    <p>Your decrypted file <strong>{{ filename }}</strong> is ready.</p>
+    <p><strong>Instructions:</strong></p>
+    <ol>
+        <li>The file is temporarily located in: {{ temp_dir }}</li>
+        <li>To access it, you may need to navigate to this location in your file explorer.</li>
+        <li>Copy the file from this temporary folder to your desired permanent location.</li>
+        <li>Remember, this temporary folder will be deleted automatically by your system.</li>
+    </ol>
+{% endblock %}
