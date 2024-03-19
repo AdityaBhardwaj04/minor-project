@@ -10,7 +10,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 UPLOAD_FOLDER = os.environ.get('UPLOAD_FOLDER')
-ALLOWED_EXTENSIONS = os.environ.get('ALLOWED_EXTENSIONS').split(',')
+ALLOWED_EXTENSIONS = os.environ.get('ALLOWED_EXTENSIONS')
 ENCRYPTION_KEY = os.environ.get('ENCRYPTION_KEY')
 
 app = Flask(__name__)
