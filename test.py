@@ -16,6 +16,8 @@ def login(username):
     knn = KNeighborsClassifier(n_neighbors=5)
     knn.fit(FACES, LABELS)
 
+    output = []
+
     while True:
         ret, frame = video.read()
         gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
