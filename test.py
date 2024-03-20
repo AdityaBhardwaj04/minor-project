@@ -16,8 +16,6 @@ def login(username):
     knn = KNeighborsClassifier(n_neighbors=5)
     knn.fit(FACES, LABELS)
 
-    output = []
-
     while True:
         ret, frame = video.read()
         gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
@@ -30,7 +28,7 @@ def login(username):
             cv2.rectangle(frame, (x, y), (x + w, y + h), (0, 0, 255), 1)
         cv2.imshow("Sign Up", frame)
         k = cv2.waitKey(1)
-        if k == ord('q') or output[0] == username:
+        if k == ord('q'):
             break
 
     video.release()
